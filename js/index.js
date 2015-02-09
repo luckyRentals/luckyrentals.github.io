@@ -42,8 +42,29 @@ function generateFeaturedHomeHtml(featuredHome) {
 	imageSection.append(image);
 	row.append(imageSection);
 	var descriptionSection = $("<div/>", {"class": "medium-8 large-8 columns"});
+	var descriptionRow = $("<div/>", {"class": "row"});
 	var description = $("<div/>");
 	description.text(featuredHome.description());
 	descriptionSection.append(description);
 	row.append(descriptionSection);
+	var propertyOptionsSection = $("<div/>", {"class": "row property-options"});
+	var propertyViewOptions = $("<div/>", {"class": "medium-6 large-6 columns"});
+	propertyOptionsSection.append(propertyViewOptions);
+	var viewPropertyButton = $("<div/>", {"class": "button large-12"});
+	$(viewPropertyButton).text("View Details");
+	$(viewPropertyButton).on("click", function() {
+
+	});
+	propertyViewOptions.append(viewPropertyButton);
+	if (featuredHome.cozyListing().length > 0) {
+		var propertyApplyOptions = $("<div/>", {"class": "medium-6 large-6 columns"});
+		propertyOptionsSection.append(propertyApplyOptions);
+		var applyPropertyButton = $("<div/>", {"class": "button large-12"});
+		$(applyPropertyButton).text("Apply Now");
+		$(applyPropertyButton).on("click", function() {
+			window.location.href=featuredHome.cozyListing();
+		});
+		propertyApplyOptions.append(applyPropertyButton);
+	}
+	container.append(propertyOptionsSection);
 }
