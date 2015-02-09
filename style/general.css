@@ -16,39 +16,43 @@
 }
 
 #lucky-main{
-	background: #222222;
-	height: 450px;
+	background: #F7F7F4;
+	min-height: 450px;
 	text-align: left;
 	position: relative;
-	padding: 100px 20px 0 20px;
+	padding: 75px 20px 75px 20px;
+}
+
+#lucky-main #title {
+	text-align: center;
 }
 
 #current-products{
 	background: #555555;
-	height:100px;
+	min-height:100px;
 	text-align:right;
 	position:relative;
 	padding: 25px 5px 5px 20px;
 }
 
-#lucky-services{
-	background: #444444;
-	min-height: 550px;
-	text-align: center;
-	position: relative;
-	padding: 70px 20px 0 20px;
-}
-
-#lucky-projects{
+#lucky-properties{
 	background: url(../img/gray_background.png), url(../img/lucky13.png);
 	background-size: auto,cover;
 	background-repeat: repeat,no-repeat;
 	background-attachment: scroll,fixed;
 	background-position: 0% 0%,top center;
 	min-height: 550px;
-	text-align: center;
+	/*text-align: center;*/
 	position: relative;
-	padding: 70px 20px 0 20px;
+	padding: 70px 20px 70px 20px;
+}
+
+#lucky-properties h1, #lucky-properties h2, #lucky-properties h3, #lucky-properties h4, #lucky-properties h5 {
+	color: white;
+}
+
+#lucky-properties .title {
+	text-align: center;
 }
 
 /*Alt for dimming the top layer of a div*/
@@ -64,9 +68,9 @@
   background: rgba(0, 0, 0, 0.5);
 }*/
 
-#lucky-about{
+#lucky-contact{
 	background: #555555;
-	height: 550px;
+	min-height: 550px;
 	text-align: center;
 	position: relative;
 	padding: 70px 20px 0 20px;
