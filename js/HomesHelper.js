@@ -17,7 +17,8 @@ var HomesHelper = function() {
 
 	this.retreiveHomes = function() {
 		var retArray = [];
-		$.each(tempJson, function(index, homeJson) {
+		var homes = new PropertiesDataStore();
+		$.each(homes.listings(), function(index, homeJson) {
 			retArray.push(new Home(homeJson));
 		});
 		return retArray;
@@ -29,79 +30,18 @@ var HomesHelper = function() {
 		// return [];
 	};
 
-	var tempJson = [
-		{
-		  "id": 1,
-		  "featured": true,
-		  "address": "10 Bowers Ave.",
-		  "city": "Newark",
-		  "state": "OH",
-		  "zip": "43055",
-		  "geocode": {
-		    "lat": 40.053543,
-		    "lon": -82.422778
-		  },
-		  "sq_ft": 1200,
-		  "bathrooms": 1,
-		  "bedroom": 3,
-		  "description": "A beautiful two story 3 bedroom apartment that has been completely remodeled.",
-		  "mainImage": "10BowersAve.jpg",
-		  "images": [
-		    {
-		      "description": "some description",
-		      "imageName": "image.jpg"
-		    }
-		  ],
-		  "isAvailable": true,
-		  "cozyListing": "https://home.cozy.co/apply/11015"
-		},
-		{
-		  "id": 2,
-		  "featured": false,
-		  "address": "12 Bowers Ave.",
-		  "city": "Newark",
-		  "state": "OH",
-		  "zip": "43055",
-		  "geocode": {
-		    "lat": 40.053543,
-		    "lon": -82.422778
-		  },
-		  "sq_ft": 1200,
-		  "bathrooms": 1,
-		  "bedroom": 3,
-		  "description": "A beautiful two story 3 bedroom apartment",
-		  "mainImage": "12BowersFrontImage.jpg",
-		  "images": [
-		    {
-		      "description": "some description",
-		      "imageName": "image.jpg"
-		    }
-		  ],
-		  "isAvailable": false,
-		  "cozyListing": "https://home.cozy.co/apply/11015"
+	this.retreivePropertyById = function(propertyId) {
+		if (propertyId === undefined) {
+			return [];
 		}
-	];
+		var homes = new PropertiesDataStore();
+		$.each(homes.listings(), function(index, property) {
+			var home = Home(property);
+			if (home.Id == propertyId) {
+				return home;
+			}
+		});
+		return []; // FIXME: Should return a canned image...
+	}
 };
-// var HomesHelper = Class({
 
-//     initialize: function() {
-      
-//     },
-
-// 	retreiveFeaturedHome: function() {
-// 		var homes = this.retreiveHomes();
-// 		$.each(homes, function(index, home) {
-// 			if (home.isFeatured()) {
-// 				return home;
-// 			}
-// 		});
-// 		return {};
-// 	},
-
-// 	retreiveHomes: function() {
-// 		$.get( "../data/homes.json", function( data ) {
-// 		  return data;
-// 		});
-// 		return [];
-// 	}
-// });

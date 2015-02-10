@@ -6,6 +6,7 @@ var Home = function(home){
 
 	var _home = {
 	  id: 0,
+	  key: "",
 	  featured: false,
 	  address: "",
 	  city: "",
@@ -26,6 +27,10 @@ var Home = function(home){
 	};
 
 	$.extend(_home, home);
+
+	this.key = function() {
+		return _home.key;
+	}
 
 	this.isFeatured = function() {
 		return _home.featured;

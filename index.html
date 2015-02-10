@@ -8,12 +8,16 @@
 		<link rel="stylesheet" href="style/foundation.css" />
 		<link rel="stylesheet" href="style/app.css" />
 		<link rel="stylesheet" type="text/css" href="style/general.css">
+		<link rel="stylesheet" type="text/css" href="style/slick.css"/>
 		<script src="js/vendor/jquery.js"></script>
 		<script src="js/vendor/modernizr.js"></script>
-		<script src="js/objects/Class.js"></script>
+		<script src="js/manage/PropertiesDataStore.js"></script>
+		<script src="js/manage/WelcomeDataStore.js"></script>
 		<script src="js/objects/Home.js"></script>
 		<script src="js/HomesHelper.js"></script>
+		<script src="js/PhotoHelper.js"></script>
 		<script src="js/index.js"></script>
+		<script type="text/javascript" src="js/vendor/slick.min.js"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap" data-offcanvas>
@@ -74,8 +78,12 @@
 								<h3>View the properties that are currently available to rent</h3>
 								<h4>Currently we have a beautifully remodelled home that is ready for you to move in!</h4>
 							</div>
-							<div class="content">
-							</div>
+						</div>
+						<div class="large-12 columns">
+							<div id="property_teaser"></div>
+						</div>
+						<div class="large-12 columns">
+							<div class="button large-12" id="view_properties_button">View Properties</div>
 						</div>
 					</div>
 				</section>
