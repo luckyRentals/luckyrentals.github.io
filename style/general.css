@@ -15,7 +15,7 @@
 	margin-right:auto;
 }
 
-#lucky-main{
+#lucky-main, #properties-main{
 	background: #F7F7F4;
 	min-height: 450px;
 	text-align: left;
@@ -23,7 +23,7 @@
 	padding: 65px 20px 65px 20px;
 }
 
-#lucky-main #title {
+#lucky-main #title, #properties-main #title {
 	text-align: center;
 }
 
@@ -84,20 +84,53 @@
 }
 
 #lucky-contact{
-	background: #555555;
-	min-height: 550px;
-	text-align: center;
+	background: #F2F7F2;
+	min-height: 400px;
+	/*text-align: center;*/
 	position: relative;
-	padding: 70px 20px 0 20px;
+	padding: 80px 10px 0 10px;
+}
+
+#lucky-contact .title {
+	text-align: center;
+}
+
+#properties-display {
+	background: rgb(254, 201, 134);
+	min-height: 450px;
+	text-align: left;
+	position: relative;
+	padding: 65px 20px 65px 20px;
+}
+
+#property_listing {
+
+}
+
+.property {
+	padding: 40px;
+	min-height: 350px;
+}
+
+.email_link {
+	color: blue;
+}
+
+.home_options .button {
+	margin: 1px;
 }
 
 footer{
-	background: #333;
-	padding: 24px 0 10px;
+	background: #FF940E;
+	padding: 15px 0 15px;
+}
+
+footer h4{
+	color: #ffffff;
 }
 
 p.copyright{
 margin: 6px 0 0;
 font-size: 0.75rem;
-color: #666666;
+color: #eeeeee;
 }

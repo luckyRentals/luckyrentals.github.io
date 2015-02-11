@@ -12,6 +12,8 @@ var Home = function(home){
 	  city: "",
 	  state: "OH",
 	  zip: "",
+	  monthlyCost: 0,
+	  petsAllowed: false,
 	  geocode: {
 	    lat: 40.053543,
 	    lon: -82.422778
@@ -42,6 +44,22 @@ var Home = function(home){
 
 	this.city = function() {
 		return _home.city;
+	}
+
+	this.state = function() {
+		return _home.state;
+	}
+
+	this.zip = function() {
+		return _home.zip;
+	}
+
+	this.monthlyCost = function() {
+		return _home.monthlyCost;
+	}
+
+	this.petsAreAllowed = function() {
+		return _home.petsAllowed;
 	}
 
 	this.geocode = function() {

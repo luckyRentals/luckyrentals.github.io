@@ -13,6 +13,8 @@ var PropertiesDataStore = function() {
 			  "city": "Newark",
 			  "state": "OH",
 			  "zip": "43055",
+			  "monthlyCost": 750,
+			  "petsAllowed": false,
 			  "geocode": {
 			    "lat": 40.053543,
 			    "lon": -82.422778
@@ -41,6 +43,8 @@ var PropertiesDataStore = function() {
 			  "city": "Newark",
 			  "state": "OH",
 			  "zip": "43055",
+			  "monthlyCost": 750,
+			  "petsAllowed": false,
 			  "geocode": {
 			    "lat": 40.053543,
 			    "lon": -82.422778

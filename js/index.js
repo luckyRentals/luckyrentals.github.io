@@ -22,6 +22,10 @@ $(function() {
 		generateFeaturedHomeHtml(featuredHome);	
 	}
 
+	$("#view_properties_button").on("click", function() {
+		window.location.href = "properties.html";
+	});
+
 	var photoHelper = new PhotoHelper();
 	var propertiesImages = photoHelper.retreiveWelcomePhotos();
 
@@ -58,7 +62,7 @@ function generateFeaturedHomeHtml(featuredHome) {
 	var viewPropertyButton = $("<div/>", {"class": "button large-12 medium-12 small-12"});
 	$(viewPropertyButton).text("View Details");
 	$(viewPropertyButton).on("click", function() {
-
+		window.location.href = "properties.html";
 	});
 	propertyViewOptions.append(viewPropertyButton);
 	if (featuredHome.cozyListing().length > 0) {
