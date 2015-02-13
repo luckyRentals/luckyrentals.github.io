@@ -9,6 +9,9 @@ $(function(){
 		$.each(properties, function(index, property) {
 			if (property.isAvailable()) {
 				$("#properties").append(generatePropertyView(property));
+				if(index + 1 < properties.length) {
+					$("#properties").append($("<div/>",{"class": "divider"}));
+				}
 				hasAvailableProperties = true;
 			}
 		});
@@ -34,7 +37,7 @@ $(function(){
 			<p>$750</p>
 			<label>Pets</label>
 			<p>No</p>
-			<div class="button large-10 medium-10 small-10">View More Images</div>
+			<div class="button large-10 medium-12 small-12">View More Images</div>
 		</div> 
 		<div class="large-4 medium-8 columns">
 			<label>Square Footage</label>
@@ -48,11 +51,13 @@ $(function(){
 	</div>
 */
 function generatePropertyView(property) {
-	var propertyDiv = $("<div/>", {"class": "panel radius row property"});
+	var propertyDiv = $("<div/>", {"class": "panel radius row property th"});
 	var propertyOverview = $("<div/>", {"class": "large-4 medium-4 small-12 columns"});
 	propertyDiv.append(propertyOverview);
-	var propertyImg = $("<img/>", {"src": "img/properties/" + property.key() + "/" + property.mainImage()});
-	propertyOverview.append(propertyImg);
+	// var propertyImg = $("<img/>", {"src": "img/properties/" + property.key() + "/" + property.mainImage()});
+	// propertyOverview.append(propertyImg);
+	var imagesCarasel = generatePropertiesImage(property.key(), property.images());
+	propertyOverview.append(imagesCarasel);
 	var address = $("<h4/>");
 	address.html(property.streetName() + "<br/>" + property.city() + ", " + property.state() + " " + property.zip());
 	propertyOverview.append(address);
@@ -71,11 +76,10 @@ function generatePropertyView(property) {
 	var petsAllowed = $("<p/>");
 	petsAllowed.text(property.petsAreAllowed());
 	leftSection.append(petsAllowed);
-	var viewImagesButton = $("<div/>", {"class": "button large-10 medium-10 small-10"});
+	var viewImagesButton = $("<div/>", {"class": "button large-10 medium-12 small-12"});
 	viewImagesButton.text("View More Images");
 	viewImagesButton.on("click", function() {
-		// FIXME: need to add the images here
-		generatePropertiesImage(property.images());
+		$(imagesCarasel).click();
 	});
 	leftSection.append(viewImagesButton);
 
@@ -112,6 +116,25 @@ function generatePropertyView(property) {
 	return propertyDiv;
 }
 
-function generatePropertiesImage(images) {
-	
+/*
+<ul class="clearing-thumbs clearing-feature" data-clearing>
+  <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+  <li class="clearing-featured-img"><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+  <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+</ul>
+*/
+function generatePropertiesImage(key, images) {
+	if (images.length == 0) return;
+
+	var baseDiv = $("<ul/>", {"class": "clearing-thumbs clearing-feature", "data-clearing": ""});
+	$.each(images, function(index, image) {
+		baseDiv.append(
+			$("<li/>", {"class": image.mainImage ? "clearing-featured-img" : "", "id": key + "_" + index}).append(
+				$("<a/>", {"href": "img/properties/" + key + "/" + image.image, "class": "th"}).append(
+					$("<img/>", {"data-caption": image.caption, "src": "img/properties/" + key + "/" + image.image})
+					)
+				)
+			);
+	});
+	return baseDiv;
 }

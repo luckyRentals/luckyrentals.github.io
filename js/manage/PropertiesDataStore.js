@@ -25,12 +25,41 @@ var PropertiesDataStore = function() {
 			  "description": "A beautiful two story 3 bedroom apartment that has been completely remodeled.",
 			  "mainImage": "10BowersAveStreetView.jpg",
 			  "images": [
-				"10BowersAveFrontRoom.jpg",
-				"10BowersAveFamilyRoom.jpg",
-				"10BowersAveKitchen.jpg",
-				"10BowersAveBedroom1.jpg",
-				"10BowersAveBedroom2.jpg",
-				"10BowersAveBedroom3.jpg"
+			  	{
+			  		"image": "10BowersAveStreetView.jpg",
+			  		"mainImage": true,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "10BowersAveFrontRoom.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "10BowersAveFamilyRoom.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "10BowersAveKitchen.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "10BowersAveBedroom1.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "10BowersAveBedroom2.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "10BowersAveBedroom3.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	}
 			  ],
 			  "isAvailable": true,
 			  "cozyListing": "https://home.cozy.co/apply/11015"
@@ -55,12 +84,41 @@ var PropertiesDataStore = function() {
 			  "description": "A beautiful two story 3 bedroom apartment",
 			  "mainImage": "12BowersAveStreetView.jpg",
 			  "images": [
-				"12BowersAveFrontRoom.jpg",
-				"12BowersAveFamilyRoom.jpg",
-				"12BowersAveKitchen.jpg",
-				"12BowersAveBedroom1.jpg",
-				"12BowersAveBedroom2.jpg",
-				"12BowersAveBedroom3.jpg"
+			  	{
+			  		"image": "12BowersAveStreetView.jpg",
+			  		"mainImage": true,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "12BowersAveFrontRoom.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "12BowersAveFamilyRoom.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "12BowersAveKitchen.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "12BowersAveBedroom1.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "12BowersAveBedroom2.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	},
+			  	{
+			  		"image": "12BowersAveBedroom3.jpg",
+			  		"mainImage": false,
+			  		"caption": "Front View"
+			  	}
 			  ],
 			  "isAvailable": false,
 			  "cozyListing": ""
