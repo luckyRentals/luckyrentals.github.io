@@ -8,6 +8,7 @@ $(function(){
 	if (properties.length > 0) {
 		$.each(properties, function(index, property) {
 			if (property.isAvailable()) {
+				$("#modal_container").append(generatePropertiesImage(property.key(), property.images()));
 				$("#properties").append(generatePropertyView(property));
 				if(index + 1 < properties.length) {
 					$("#properties").append($("<div/>",{"class": "divider"}));
@@ -54,10 +55,13 @@ function generatePropertyView(property) {
 	var propertyDiv = $("<div/>", {"class": "panel radius row property th"});
 	var propertyOverview = $("<div/>", {"class": "large-4 medium-4 small-12 columns"});
 	propertyDiv.append(propertyOverview);
-	// var propertyImg = $("<img/>", {"src": "img/properties/" + property.key() + "/" + property.mainImage()});
-	// propertyOverview.append(propertyImg);
-	var imagesCarasel = generatePropertiesImage(property.key(), property.images());
-	propertyOverview.append(imagesCarasel);
+	// var imagesModal = generatePropertiesImage(property.key(), property.images());
+	// propertyDiv.append(imagesModal);
+	var propertyImg = $("<img/>", {"src": "img/properties/" + property.key() + "/" + property.mainImage(), "data-reveal-id": property.key()});
+	propertyImg.on("click", function() {
+  		$("#" + property.key()).foundation('reveal','open');
+	});
+	propertyOverview.append(propertyImg);
 	var address = $("<h4/>");
 	address.html(property.streetName() + "<br/>" + property.city() + ", " + property.state() + " " + property.zip());
 	propertyOverview.append(address);
@@ -76,10 +80,10 @@ function generatePropertyView(property) {
 	var petsAllowed = $("<p/>");
 	petsAllowed.text(property.petsAreAllowed());
 	leftSection.append(petsAllowed);
-	var viewImagesButton = $("<div/>", {"class": "button large-10 medium-12 small-12"});
+	var viewImagesButton = $("<a/>", {"class": "button large-10 medium-12 small-12", "data-reveal-id": property.key()});
 	viewImagesButton.text("View More Images");
 	viewImagesButton.on("click", function() {
-		$(imagesCarasel).click();
+  		$("#" + property.key()).foundation('reveal','open');
 	});
 	leftSection.append(viewImagesButton);
 
@@ -125,16 +129,41 @@ function generatePropertyView(property) {
 */
 function generatePropertiesImage(key, images) {
 	if (images.length == 0) return;
-
-	var baseDiv = $("<ul/>", {"class": "clearing-thumbs clearing-feature", "data-clearing": ""});
-	$.each(images, function(index, image) {
-		baseDiv.append(
-			$("<li/>", {"class": image.mainImage ? "clearing-featured-img" : "", "id": key + "_" + index}).append(
-				$("<a/>", {"href": "img/properties/" + key + "/" + image.image, "class": "th"}).append(
-					$("<img/>", {"data-caption": image.caption, "src": "img/properties/" + key + "/" + image.image})
-					)
-				)
-			);
+	var baseEl = $("<div/>", {"id": key,"class": "reveal-modal large", "data-reveal": ""});
+	var close = $("<a/>",{"class":"close-reveal-modal"});
+	close.html("&#215;");
+	baseEl.append(close);
+	baseEl.append($("<br/>"));
+	var imageElement = $("<div/>");
+	baseEl.append(imageElement);
+	$.each(images, function(index, image){
+		var imgContainer = $("<div/>");
+		var imageImg = $("<img/>", {"src": "img/properties/" + key + "/" + image.image, "class": "middle"});
+		var description = $("<h4/>", {"style": "text-align:center"});
+		description.text(image.caption);
+		imgContainer.append(imageImg);
+		imgContainer.append(description);
+		imageElement.append(imgContainer);
 	});
-	return baseDiv;
+	$(imageElement).on('init', function() {
+		console.log('intialized');
+	});
+	$(imageElement).slick({
+	  swipeToSlide: true,
+	  arrows: false
+	});
+	return baseEl;
+
 }
+// 	var baseDiv = $("<ul/>", {"class": "clearing-thumbs clearing-feature", "data-clearing": ""});
+// 	$.each(images, function(index, image) {
+// 		baseDiv.append(
+// 			$("<li/>", {"class": image.mainImage ? "clearing-featured-img" : "", "id": key + "_" + index}).append(
+// 				$("<a/>", {"href": "img/properties/" + key + "/" + image.image, "class": "th"}).append(
+// 					$("<img/>", {"data-caption": image.caption, "src": "img/properties/" + key + "/" + image.image})
+// 					)
+// 				)
+// 			);
+// 	});
+// 	return baseDiv;
+// }

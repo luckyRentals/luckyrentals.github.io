@@ -17,6 +17,7 @@
 		<script src="js/HomesHelper.js"></script>
 		<script src="js/PhotoHelper.js"></script>
 		<script src="js/properties.js"></script>
+		<script type="text/javascript" src="js/vendor/slick.min.js"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap" data-offcanvas>
@@ -64,8 +65,7 @@
 					</div>
 				</section>
 				<section id="properties-display">
-					<ul class="clearing-thumbs clearing-feature" data-clearing>
-					</ul>
+					<div id="modal_container"></div>
 					<div class="row">
 						<div class="large-12 columns">
 							<div id="property_listing">
@@ -91,13 +91,12 @@
 			</div>
 		</div>
 		<script src="js/foundation/foundation.js"></script>
-  		<script src="js/foundation/foundation.clearing.js"></script>
+  		<script src="js/foundation/foundation.reveal.js"></script>
 		<script src="js/foundation/foundation.offcanvas.js"></script>
 		<script src="js/foundation/foundation.topbar.js"></script>
 		<script src="js/foundation/foundation.magellan.js"></script>
 		<script>
 			$(document).foundation();
-			$(document).foundation('clearing', 'reflow');
 		</script>
 	</body>
 </html>

@@ -62,7 +62,7 @@ var PropertiesDataStore = function() {
 			  	}
 			  ],
 			  "isAvailable": true,
-			  "cozyListing": "https://home.cozy.co/apply/11015"
+			  "cozyListing": "https://home.cozy.co/apply/12365"
 			},
 			{
 			  "id": 2,
