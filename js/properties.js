@@ -23,7 +23,76 @@ $(function(){
 	} else {
 		$("#no-property-message").show();
 	}
-	
+    $("a[rel^='prettyPhoto']").prettyPhoto({social_tools: false,
+			allow_resize: true, 
+			allow_expand: false, 
+			default_width: 750,
+			default_height: 500,
+			counter_separator_label: ' of ', /* The separator for the gallery counter 1 "of" 2 */
+			horizontal_padding: 16,
+			theme: 'pp_default', 
+			modal: false, /* If set to true, only the close button will close the window */
+			deeplinking: false, /* Allow prettyPhoto to update the url to enable deeplinking. */
+			overlay_gallery: false,
+			markup: '<div class="pp_pic_holder large-8 medium-8 small-10"> \
+						<div class="ppt">&nbsp;</div> \
+						<div class="pp_top"> \
+							<div class="pp_left"></div> \
+							<div class="pp_middle"></div> \
+							<div class="pp_right"></div> \
+						</div> \
+						<div class="pp_content_container"> \
+							<div class="pp_left"> \
+							<div class="pp_right"> \
+								<div class="pp_content"> \
+									<div class="pp_loaderIcon"></div> \
+									<div class="pp_fade"> \
+										<a href="#" class="pp_expand" title="Expand the image">Expand</a> \
+										<div class="pp_hoverContainer"> \
+											<a class="pp_next" href="#">next</a> \
+											<a class="pp_previous" href="#">previous</a> \
+										</div> \
+										<div id="pp_full_res"></div> \
+										<div class="pp_details detail_container"> \
+											<p class="pp_description"></p> \
+											<p class="currentTextHolder page_marker">0/0</p> \
+										</div> \
+									</div> \
+								</div> \
+							</div> \
+							</div> \
+						</div> \
+						<div class="pp_bottom"> \
+							<div class="pp_left"></div> \
+							<div class="pp_middle"></div> \
+							<div class="pp_right"></div> \
+						</div> \
+						<div class="hide-for-small"  style="z-index:20000"> \
+							<ul class="button-group round even-3"> \
+							  <li><div class="button" id="gallery_prev">Prev</div></li> \
+							  <li><div class="button" id="gallery_close">Close</div></li> \
+							  <li><div class="button" id="gallery_next">Next</div></li> \
+							</ul> \
+						</div> \
+						<div class="show-for-small" style="z-index:20000"> \
+							  <div class="button small-12" id="gallery_prev">Prev</div> \
+							  <div class="button small-12" id="gallery_close">Close</div> \
+							  <div class="button small-12" id="gallery_next">Next</div> \
+						</div> \
+						<script> \
+							$("#gallery_prev").on("click", function(){ \
+								$.prettyPhoto.changePage("previous"); \
+							}); \
+							$("#gallery_close").on("click", function(){ \
+								$.prettyPhoto.close(); \
+							}); \
+							$("#gallery_next").on("click", function(){ \
+								$.prettyPhoto.changePage("next"); \
+							}); \
+						</script> \
+					</div> \
+					<div class="pp_overlay"></div>'
+		});
 });
 
 /*
@@ -58,8 +127,11 @@ function generatePropertyView(property) {
 	// var imagesModal = generatePropertiesImage(property.key(), property.images());
 	// propertyDiv.append(imagesModal);
 	var propertyImg = $("<img/>", {"src": "img/properties/" + property.key() + "/" + property.mainImage(), "data-reveal-id": property.key()});
+	var gallery = generateGallery(property.key(), property.images());
 	propertyImg.on("click", function() {
-  		$("#" + property.key()).foundation('reveal','open');
+  		//$("#" + property.key()).foundation('reveal','open');
+
+		$.prettyPhoto.open(gallery.images, gallery.titles, gallery.descriptions);
 	});
 	propertyOverview.append(propertyImg);
 	var address = $("<h4/>");
@@ -83,7 +155,7 @@ function generatePropertyView(property) {
 	var viewImagesButton = $("<a/>", {"class": "button large-10 medium-12 small-12", "data-reveal-id": property.key()});
 	viewImagesButton.text("View More Images");
 	viewImagesButton.on("click", function() {
-  		$("#" + property.key()).foundation('reveal','open');
+		$.prettyPhoto.open(gallery.images, gallery.titles, gallery.descriptions);
 	});
 	leftSection.append(viewImagesButton);
 
@@ -120,6 +192,24 @@ function generatePropertyView(property) {
 	return propertyDiv;
 }
 
+function generateGallery (key, images) {
+	var p_images = [];
+	var p_titles = [];
+	var p_descriptions = [];
+
+	$.each(images, function(index, image){
+		p_images.push("img/properties/" + key + "/" + image.image);
+		p_titles.push(image.title);
+		p_descriptions.push(image.caption);
+	});
+
+	return {
+		images: p_images,
+		titles: p_titles,
+		descriptions: p_descriptions
+	}
+}
+
 /*
 <ul class="clearing-thumbs clearing-feature" data-clearing>
   <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
@@ -132,10 +222,9 @@ function generatePropertiesImage(key, images) {
 	var baseEl = $("<div/>", {"id": key,"class": "reveal-modal large", "data-reveal": ""});
 	var close = $("<a/>",{"class":"close-reveal-modal"});
 	close.html("&#215;");
-	baseEl.append(close);
-	baseEl.append($("<br/>"));
 	var imageElement = $("<div/>");
 	baseEl.append(imageElement);
+	baseEl.append(close);
 	$.each(images, function(index, image){
 		var imgContainer = $("<div/>");
 		var imageImg = $("<img/>", {"src": "img/properties/" + key + "/" + image.image, "class": "middle"});
@@ -145,16 +234,16 @@ function generatePropertiesImage(key, images) {
 		imgContainer.append(description);
 		imageElement.append(imgContainer);
 	});
-	$(imageElement).on('init', function() {
-		console.log('intialized');
-	});
-	$(imageElement).slick({
-	  swipeToSlide: true,
-	  arrows: false
-	});
+	// $(imageElement).slick({
+	//   swipeToSlide: true,
+	//   arrows: false
+	// });
 	return baseEl;
 
 }
+
+
+
 // 	var baseDiv = $("<ul/>", {"class": "clearing-thumbs clearing-feature", "data-clearing": ""});
 // 	$.each(images, function(index, image) {
 // 		baseDiv.append(

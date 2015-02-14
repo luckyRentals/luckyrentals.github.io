@@ -128,6 +128,17 @@
 	margin: 1px;
 }
 
+p.page_marker {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	color: #ffffff;
+}
+
+.detail_container {
+	padding-bottom: 62px;
+}
+
 footer{
 	background: #FF940E;
 	padding: 15px 0 15px;
