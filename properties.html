@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Lucky Rentals | Welcome</title>
+		<title>Lucky Rentals | Properties</title>
 		<link rel="icon" type="image/png" href="favicon.png">
 		<link rel="stylesheet" href="style/foundation.css" />
 		<link rel="stylesheet" href="style/app.css" />
@@ -16,8 +16,7 @@
 		<script src="js/objects/Home.js"></script>
 		<script src="js/HomesHelper.js"></script>
 		<script src="js/PhotoHelper.js"></script>
-		<script src="js/index.js"></script>
-		<script type="text/javascript" src="js/vendor/slick.min.js"></script>
+		<script src="js/properties.js"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap" data-offcanvas>
@@ -34,7 +33,7 @@
 							<li class="divider"></li>
 							<li data-magellan-arrival="properties"><a href="properties.html">Properties</a></li>
 							<li class="divider"></li>
-							<li data-magellan-arrival="contact"><a href="#contact">Contact</a></li>
+							<li data-magellan-arrival="contact"><a href="index.html#contact">Contact</a></li>
 						</ul>
 					</section>
 				</nav>
@@ -52,59 +51,30 @@
 						<li><label>Lucky Rentals</label></li>
 						<li data-magellan-arrival="home"><a href="index.html">Home</a></li>
 						<li data-magellan-arrival="properties"><a href="properties.html">Properties</a></li>
-						<li data-magellan-arrival="contact"><a href="#contact">Contact</a></li>
+						<li data-magellan-arrival="contact"><a href="index.html#contact">Contact</a></li>
 					</ul>
 				</aside>
-				<section id="lucky-main">
+				<section id="properties-main">
 					<div class="row">
 					  <div class="medium-11 large-11 columns">
 						<a name="home"></a>
-						<h1>Welcome to Lucky Rentals</h1>
-						<h2>Come checkout our beautiful selection of properties to choose from.</h2>
-						<br/>
-						<h3>We currently have <span id="numberOfHomes">0</span> home(s) available for you to move into.</h3>
+						<h1>Property Listing</h1>
+						<h2>Below you will find a list of properties. &lt;- Needs help...</h2>
 					  </div>
 					</div>
-					<br/>
-					<br/>
-					<div id="featured-property-section" >
-					</div>
 				</section>
-				<section id="lucky-properties">
+				<section id="properties-display">
+					<ul class="clearing-thumbs clearing-feature" data-clearing>
+					</ul>
 					<div class="row">
 						<div class="large-12 columns">
-							<div class="title">
-								<a name="properties"></a>
-								<h1 data-magellan-destination="properties">Properties</h1>
-								<h3>View the properties that are currently available to rent</h3>
-								<h4>Currently we have a beautifully remodelled home that is ready for you to move in!</h4>
+							<div id="property_listing">
+								<div id="no-property-message" class="panel callout radius">
+									<h1>No properties are vacant. Should we specify when a lease is up so they can check back?</h1>
+								</div>
+								<div id="properties">
+								</div>
 							</div>
-						</div>
-						<div class="large-12 columns">
-							<div id="property_teaser"></div>
-						</div>
-						<div class="large-12 columns">
-							<div class="button large-12 medium-12 small-12" id="view_properties_button">View Properties</div>
-						</div>
-					</div>
-				</section>
-				<section id="lucky-contact">
-					<div class="row">
-						<div class="large-12 columns">
-							<a name="contact"></a>
-							<div class="title">
-								<h1 data-magellan-destination="contact">Contact</h1>
-								<p>You can reach us by phone between 8 a.m. and 5 p.m.</p>
-								<p>Or send us an email anytime and we will get back to you as soon as possible.</p>
-							</div>
-							<ul class="contant_info">
-								<li>
-									<h3>Call: <span>614.944.8919</span></h3>
-								</li>
-								<li>
-									<h4>I have a question about a property? </h4><a href="mailto:davis.luckyrentals@gmail.com?subject=Contact Us" class="email_link">Send us an email</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</section>
@@ -121,11 +91,13 @@
 			</div>
 		</div>
 		<script src="js/foundation/foundation.js"></script>
+  		<script src="js/foundation/foundation.clearing.js"></script>
 		<script src="js/foundation/foundation.offcanvas.js"></script>
 		<script src="js/foundation/foundation.topbar.js"></script>
 		<script src="js/foundation/foundation.magellan.js"></script>
 		<script>
 			$(document).foundation();
+			$(document).foundation('clearing', 'reflow');
 		</script>
 	</body>
 </html>

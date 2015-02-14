@@ -1,0 +1,44 @@
+[
+	{
+	  "id": 1,
+	  "featured": true,
+	  "address": "10 Bowers Ave.",
+	  "city": "Newark",
+	  "state": "OH",
+	  "zip": "43055",
+	  "geocode": {
+	    "lat": 40.053543,
+	    "lon": -82.422778
+	  },
+	  "mainImage": "10BowersFrontImage.jpg",
+	  "images": [
+	    {
+	      "description": "some description",
+	      "imageName": "image.jpg"
+	    }
+	  ],
+	  "isAvailable": true,
+	  "cozyListing": "https://home.cozy.co/apply/11015"
+	},
+	{
+	  "id": 2,
+	  "featured": false,
+	  "address": "12 Bowers Ave.",
+	  "city": "Newark",
+	  "state": "OH",
+	  "zip": "43055",
+	  "geocode": {
+	    "lat": 40.053543,
+	    "lon": -82.422778
+	  },
+	  "mainImage": "12BowersFrontImage.jpg",
+	  "images": [
+	    {
+	      "description": "some description",
+	      "imageName": "image.jpg"
+	    }
+	  ],
+	  "isAvailable": false,
+	  "cozyListing": "https://home.cozy.co/apply/11015"
+	}
+]

@@ -1,0 +1,1 @@
+We should try and keep images no taller or wider than 400 ~ 500 px.
