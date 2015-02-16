@@ -147,10 +147,10 @@ function generatePropertyView(property) {
 	monthlyCost.text("$" + property.monthlyCost());
 	leftSection.append(monthlyCost);
 	var petsLabel = $("<label/>");
-	petsLabel.text("Pets");
+	petsLabel.text("Pets Allowed");
 	leftSection.append(petsLabel);
 	var petsAllowed = $("<p/>");
-	petsAllowed.text(property.petsAreAllowed());
+	petsAllowed.text(property.petsAreAllowed() ? "Yes" : "No");
 	leftSection.append(petsAllowed);
 	var viewImagesButton = $("<a/>", {"class": "button large-10 medium-12 small-12", "data-reveal-id": property.key()});
 	viewImagesButton.text("View More Images");
