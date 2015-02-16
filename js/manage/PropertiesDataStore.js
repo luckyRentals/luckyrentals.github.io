@@ -28,37 +28,44 @@ var PropertiesDataStore = function() {
 			  	{
 			  		"image": "10BowersAveStreetView.jpg",
 			  		"mainImage": true,
-			  		"caption": "Front View"
+			  		"title": "Street View",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "10BowersAveFrontRoom.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Front Room",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "10BowersAveFamilyRoom.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Front Family Room",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "10BowersAveKitchen.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Kitchen",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "10BowersAveBedroom1.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Bedroom 1",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "10BowersAveBedroom2.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Bedroom 2",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "10BowersAveBedroom3.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Bedroom 3",
+			  		"caption": "Some descriptive item"
 			  	}
 			  ],
 			  "isAvailable": true,
@@ -87,37 +94,44 @@ var PropertiesDataStore = function() {
 			  	{
 			  		"image": "12BowersAveStreetView.jpg",
 			  		"mainImage": true,
-			  		"caption": "Front View"
+			  		"title": "Front View",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "12BowersAveFrontRoom.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Front View",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "12BowersAveFamilyRoom.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Front View",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "12BowersAveKitchen.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Front View",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "12BowersAveBedroom1.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Front View",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "12BowersAveBedroom2.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Front View",
+			  		"caption": "Some descriptive item"
 			  	},
 			  	{
 			  		"image": "12BowersAveBedroom3.jpg",
 			  		"mainImage": false,
-			  		"caption": "Front View"
+			  		"title": "Front View",
+			  		"caption": "Some descriptive item"
 			  	}
 			  ],
 			  "isAvailable": false,
