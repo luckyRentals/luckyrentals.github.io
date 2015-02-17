@@ -30,13 +30,29 @@ var HomesHelper = function() {
 		// return [];
 	};
 
+	this.retreivePropertyByKey = function(propertyKey) {
+		if (propertyKey === undefined) {
+			return [];
+		}
+		var homes = new PropertiesDataStore();
+		var retHome = {}; 
+		$.each(homes.listings(), function(index, property) {
+			var home = new Home(property);
+			if (home.key() == propertyKey) {
+				retHome = home;
+				return false;
+			}
+		});
+		return retHome; // FIXME: Should return a canned image...
+	}
+
 	this.retreivePropertyById = function(propertyId) {
 		if (propertyId === undefined) {
 			return [];
 		}
 		var homes = new PropertiesDataStore();
 		$.each(homes.listings(), function(index, property) {
-			var home = Home(property);
+			var home = new Home(property);
 			if (home.Id == propertyId) {
 				return home;
 			}

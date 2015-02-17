@@ -14,10 +14,11 @@ var PropertiesDataStore = function() {
 			  "state": "OH",
 			  "zip": "43055",
 			  "monthlyCost": 750,
+			  "securityDeposit": 750,
 			  "petsAllowed": false,
 			  "geocode": {
-			    "lat": 40.053543,
-			    "lon": -82.422778
+			    "lat": 40.053565,
+			    "lng": -82.422778
 			  },
 			  "sq_ft": 1200,
 			  "bathrooms": 1,
@@ -80,10 +81,11 @@ var PropertiesDataStore = function() {
 			  "state": "OH",
 			  "zip": "43055",
 			  "monthlyCost": 750,
+			  "securityDeposit": 750,
 			  "petsAllowed": false,
 			  "geocode": {
-			    "lat": 40.053543,
-			    "lon": -82.422778
+			    "lat": 40.053620,
+			    "lng": -82.422778
 			  },
 			  "sq_ft": 1200,
 			  "bathrooms": 1,

@@ -128,11 +128,11 @@ function generatePropertyView(property) {
 	// propertyDiv.append(imagesModal);
 	var propertyImg = $("<img/>", {"src": "img/properties/" + property.key() + "/" + property.mainImage(), "data-reveal-id": property.key()});
 	var gallery = generateGallery(property.key(), property.images());
-	propertyImg.on("click", function() {
-  		//$("#" + property.key()).foundation('reveal','open');
+	// propertyImg.on("click", function() {
+ //  		//$("#" + property.key()).foundation('reveal','open');
 
-		$.prettyPhoto.open(gallery.images, gallery.titles, gallery.descriptions);
-	});
+	// 	$.prettyPhoto.open(gallery.images, gallery.titles, gallery.descriptions);
+	// });
 	propertyOverview.append(propertyImg);
 	var address = $("<h4/>");
 	address.html(property.streetName() + "<br/>" + property.city() + ", " + property.state() + " " + property.zip());
@@ -157,7 +157,7 @@ function generatePropertyView(property) {
 	viewImagesButton.on("click", function() {
 		$.prettyPhoto.open(gallery.images, gallery.titles, gallery.descriptions);
 	});
-	leftSection.append(viewImagesButton);
+	// leftSection.append(viewImagesButton);
 
 	var rightSection = $("<div/>", {"class": "large-4 medium-8 columns"});
 	propertyDiv.append(rightSection);
@@ -171,7 +171,7 @@ function generatePropertyView(property) {
 	bedroomLabel.text("Bedrooms");
 	rightSection.append(bedroomLabel);
 	var bedrooms = $("<p/>");
-	bedrooms.text(property.bedroom());
+	bedrooms.text(property.bedrooms());
 	rightSection.append(bedrooms);
 	var bathroomsLabel = $("<label/>");
 	bathroomsLabel.text("Bathrooms");
@@ -180,15 +180,18 @@ function generatePropertyView(property) {
 	bathrooms.text(property.bathrooms());
 	rightSection.append(bathrooms);
 
-	if (property.cozyListing().length > 0) {
-		var applyButton = $("<div/>", {"class": "button large-12 medium-12 small-12"});
-		applyButton.text("Apply Now");
-		applyButton.on("click", function() {
-			window.location.href=property.cozyListing();
-		});
-		propertyDiv.append(applyButton);
-	}
+	// if (property.cozyListing().length > 0) {
+	// 	var applyButton = $("<div/>", {"class": "button large-12 medium-12 small-12"});
+	// 	applyButton.text("Apply Now");
+	// 	applyButton.on("click", function() {
+	// 		window.location.href=property.cozyListing();
+	// 	});
+	// 	propertyDiv.append(applyButton);
+	// }
 
+	propertyDiv.on("click", function() {
+		window.location.href = "property.html?pk=" + property.key();
+	});
 	return propertyDiv;
 }
 
