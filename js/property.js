@@ -80,9 +80,9 @@ function generatePropertyPhotos(property) {
 	var baseEl = $("#property_images");
 	$.each(property.images(), function(index, image){
 		baseEl.append(
-			$("<li/>", {"class": "th"}).append(
+			$("<li/>", {}).append(
 				$("<a/>", {"href": "img/properties/" + property.key() + "/" + image.image})).append(
-				$("<img/>", {"src": "img/properties/" + property.key() + "/" + image.image, "data-caption": image.caption})));
+				$("<img/>", {"src": "img/properties/" + property.key() + "/" + image.image, "data-caption": image.caption, "class": "th"})));
 	});
 }
 
