@@ -19,7 +19,7 @@
 	min-height: 450px;
 }
 
-#lucky-main, #properties-main{
+#lucky-main, #properties-main, #property-main{
 	background: #F7F7F4;
 	text-align: left;
 	position: relative;
@@ -86,19 +86,19 @@
 	padding: 20px 0 20px 0;
 }
 
-#lucky-contact{
+#lucky-contact, #property-location{
 	background: #F2F7F2;
 	min-height: 400px;
 	/*text-align: center;*/
 	position: relative;
-	padding: 80px 10px 0 10px;
+	padding: 55px 10px 55px 10px;
 }
 
 #lucky-contact .title {
 	text-align: center;
 }
 
-#properties-display {
+#properties-display, #property-photo-section {
 	background: rgb(254, 201, 134);
 	min-height: 450px;
 	text-align: left;
@@ -115,6 +115,10 @@
 	margin: 10px 5px 10px 10px;
 }
 
+#property-main {
+	min-height: 400px;
+}
+
 .property {
 	padding: 40px;
 	min-height: 350px;
@@ -126,6 +130,53 @@
 
 .home_options .button {
 	margin: 1px;
+}
+
+.photo_gallery {
+
+}
+
+#property-map {
+	/*width: 500px;*/
+	/*max-width: px;*/
+    display: block;
+    width: 100%;
+    height: 400px;
+	background-color: #ccc;
+	border: solid 10px rgb(254, 201, 134);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 2px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 2px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 2px;
+}
+
+#property_apply_btn {
+	margin-top: 20px
+}
+
+/*.photo_gallery li, .photo_gallery li img, .photo_gallery li a{
+	height: 75px;
+	width: 75px;		
+}*/
+
+h1 span.label {
+	margin-left: 10px;
+	vertical-align: middle;
+	background: #FF940E;
+}
+
+p.page_marker {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	color: #ffffff;
+}
+
+div.property {
+	cursor: pointer;
+}
+
+.detail_container {
+	padding-bottom: 62px;
 }
 
 footer{
