@@ -69,6 +69,10 @@
 	text-align: center;
 }
 
+#properties-main h2 a{
+	color: #FF940E;
+}
+
 /*Alt for dimming the top layer of a div*/
 /*#lucky-products:after {
   content: " ";
