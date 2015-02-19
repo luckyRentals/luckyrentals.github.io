@@ -23,7 +23,7 @@ var PropertiesDataStore = function() {
 			  "sq_ft": 1200,
 			  "bathrooms": 1,
 			  "bedroom": 3,
-			  "description": "A beautiful two story 3 bedroom apartment that has been completely remodeled.",
+			  "description": "Welcome to 10 Bowers Avenue.  This 3 bedroom, 1 bath unit has been recently updated and is conveniently located in Newark, Ohio.  The kitchen has been completely remodeled and has newer appliances.  Easy access to State Route 16, 79 and 13 add to the benefits of this unit.  The monthly rent is $750 as well as a security deposit of $750; water and trash are included in the rent.  Rent is due on the 1st of the month and must be set up on an ACH auto draft process to be considered.  Credit check required and no pets allowed.",
 			  "mainImage": "10BowersAveStreetView.jpg",
 			  "images": [
 			  	{

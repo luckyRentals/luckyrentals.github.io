@@ -1,7 +1,7 @@
 #title-logo{
-	background: url(../img/Lucky13LogoText.png);
-	background-size: 108px 45px;
-	width: 108px;
+	background: url(../img/lucky_rentals_logo_text.png);
+	background-size: 180px 45px;
+	width: 180px;
 	height:45px;
 	display:block;
 	margin-left:auto;
@@ -67,6 +67,10 @@
 
 #lucky-properties .title {
 	text-align: center;
+}
+
+#properties-main h2 a{
+	color: #FF940E;
 }
 
 /*Alt for dimming the top layer of a div*/
