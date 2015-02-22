@@ -73,6 +73,10 @@
 	color: #FF940E;
 }
 
+#properties-main h2 a:hover {
+	color: rgb(254, 201, 134);
+}
+
 /*Alt for dimming the top layer of a div*/
 /*#lucky-products:after {
   content: " ";
