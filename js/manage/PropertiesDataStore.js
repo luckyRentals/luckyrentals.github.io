@@ -24,49 +24,85 @@ var PropertiesDataStore = function() {
 			  "bathrooms": 1,
 			  "bedroom": 3,
 			  "description": "Welcome to 10 Bowers Avenue.  This 3 bedroom, 1 bath unit has been recently updated and is conveniently located in Newark, Ohio.  The kitchen has been completely remodeled and has newer appliances.  Easy access to State Route 16, 79 and 13 add to the benefits of this unit.  The monthly rent is $750 as well as a security deposit of $750; water and trash are included in the rent.  Rent is due on the 1st of the month and must be set up on an ACH auto draft process to be considered.  Credit check required and no pets allowed.",
-			  "mainImage": "10BowersAveStreetView.jpg",
+			  "mainImage": "front_room1.jpg",
 			  "images": [
 			  	{
-			  		"image": "10BowersAveStreetView.jpg",
+			  		"image": "front_room1.jpg",
 			  		"mainImage": true,
-			  		"title": "Street View",
-			  		"caption": "Some descriptive item"
+			  		"title": "Front Room",
+			  		"caption": "Front Room view from front door"
 			  	},
 			  	{
-			  		"image": "10BowersAveFrontRoom.jpg",
+			  		"image": "FrontToLivingRoom.jpg",
 			  		"mainImage": false,
 			  		"title": "Front Room",
-			  		"caption": "Some descriptive item"
+			  		"caption": "View from front room into the living room"
 			  	},
 			  	{
-			  		"image": "10BowersAveFamilyRoom.jpg",
+			  		"image": "LivingRoom.jpg",
 			  		"mainImage": false,
-			  		"title": "Front Family Room",
-			  		"caption": "Some descriptive item"
+			  		"title": "Living Room",
+			  		"caption": "Spacious Living Room"
 			  	},
 			  	{
-			  		"image": "10BowersAveKitchen.jpg",
+			  		"image": "LivingRoom2.jpg",
+			  		"mainImage": false,
+			  		"title": "Living Room",
+			  		"caption": "Another angle from the living room"
+			  	},
+			  	{
+			  		"image": "image_coming_soon.jpg",
 			  		"mainImage": false,
 			  		"title": "Kitchen",
-			  		"caption": "Some descriptive item"
+			  		"caption": "New Cabinets and appliances"
 			  	},
 			  	{
-			  		"image": "10BowersAveBedroom1.jpg",
+			  		"image": "Bedroom1.jpg",
 			  		"mainImage": false,
 			  		"title": "Bedroom 1",
-			  		"caption": "Some descriptive item"
+			  		"caption": "Bedroom at the top of the stairs"
 			  	},
 			  	{
-			  		"image": "10BowersAveBedroom2.jpg",
+			  		"image": "Bedroom2.jpg",
 			  		"mainImage": false,
-			  		"title": "Bedroom 2",
-			  		"caption": "Some descriptive item"
+			  		"title": "Middle Bedroom",
+			  		"caption": "Bedroom with a closet"
 			  	},
 			  	{
-			  		"image": "10BowersAveBedroom3.jpg",
+			  		"image": "Bedroom2_2.jpg",
 			  		"mainImage": false,
-			  		"title": "Bedroom 3",
-			  		"caption": "Some descriptive item"
+			  		"title": "Middle Bedroom",
+			  		"caption": "Another view of the middle bedroom"
+			  	},
+			  	{
+			  		"image": "Bedroom3.jpg",
+			  		"mainImage": false,
+			  		"title": "Front Bedroom",
+			  		"caption": "The front bedroom is the most spacious"
+			  	},
+			  	{
+			  		"image": "Bedroom3_2.jpg",
+			  		"mainImage": false,
+			  		"title": "Front Bedroom",
+			  		"caption": "Another view of the front bedroom"
+			  	},
+			  	{
+			  		"image": "Bathroom.jpg",
+			  		"mainImage": false,
+			  		"title": "Bathroom",
+			  		"caption": "Full size bathroom"
+			  	},
+			  	{
+			  		"image": "Hallway2.jpg",
+			  		"mainImage": false,
+			  		"title": "Upstairs Hallway",
+			  		"caption": "Looking down the hallway towards the front bedroom"
+			  	},
+			  	{
+			  		"image": "Hallway1.jpg",
+			  		"mainImage": false,
+			  		"title": "Upstairs Hallway",
+			  		"caption": "Opposite side of the hallway"
 			  	}
 			  ],
 			  "isAvailable": true,
