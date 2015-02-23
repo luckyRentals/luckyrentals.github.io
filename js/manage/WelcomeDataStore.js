@@ -4,10 +4,11 @@ var WelcomeDataStore = function() {
 	
 	this.welcomePropertyImages = function() {
 		return [
-			"welcome/welcomeImage1.jpg",
-			"welcome/welcomeImage2.jpg",
-			"welcome/welcomeImage3.jpg",
-			"welcome/welcomeImage4.jpg"
+			"welcome/front_room1.jpg",
+			"welcome/FrontToLivingRoom.jpg",
+			"welcome/Bedroom1.jpg",
+			"welcome/Bedroom2.jpg",
+			"welcome/Bedroom3.jpg"
 		];
 	}	
 };
