@@ -4,11 +4,13 @@ var WelcomeDataStore = function() {
 	
 	this.welcomePropertyImages = function() {
 		return [
-			"welcome/front_room1.jpg",
-			"welcome/FrontToLivingRoom.jpg",
-			"welcome/Bedroom1.jpg",
-			"welcome/Bedroom2.jpg",
-			"welcome/Bedroom3.jpg"
+			"welcome/IMG_0027_2_sm.jpg",
+			"welcome/IMG_0018_2_sm.jpg",
+			"welcome/IMG_0016_2_sm.jpg",
+			"welcome/IMG_0013_2_sm.jpg",
+			"welcome/IMG_0007_2_sm.jpg",
+			"welcome/IMG_0003_2_sm.jpg",
+			"welcome/IMG_0001_2_sm.jpg"
 		];
 	}	
 };
