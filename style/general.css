@@ -132,6 +132,10 @@
 	min-height: 350px;
 }
 
+.property.th {
+	width: 100%;
+}
+
 .email_link {
 	color: blue;
 }
