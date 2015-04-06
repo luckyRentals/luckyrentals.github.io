@@ -2,27 +2,22 @@
 $(function(){
 
 	var homeHelper = new HomesHelper();
-	var properties = homeHelper.retreiveHomes();
+	homeHelper.retrieveHomes(function(properties) {
+        if (properties.length > 0) {
+            $.each(properties, function(index, property) {
+                if (property.isAvailable()) {
+                    $("#modal_container").append(generatePropertiesImage(property.key(), property.images()));
+                    $("#properties").append(generatePropertyView(property));
+                    if(index + 1 < properties.length) {
+                        $("#properties").append($("<div/>",{"class": "divider"}));
+                    }
+                    $("#no-property-message").hide();
+                }
+            });
+        }
+    });
+    $("#no-property-message").show();
 
-	var hasAvailableProperties = false;
-	if (properties.length > 0) {
-		$.each(properties, function(index, property) {
-			if (property.isAvailable()) {
-				$("#modal_container").append(generatePropertiesImage(property.key(), property.images()));
-				$("#properties").append(generatePropertyView(property));
-				if(index + 1 < properties.length) {
-					$("#properties").append($("<div/>",{"class": "divider"}));
-				}
-				hasAvailableProperties = true;
-			}
-		});
-	} 
-
-	if (hasAvailableProperties) {
-		$("#no-property-message").hide();
-	} else {
-		$("#no-property-message").show();
-	}
     $("a[rel^='prettyPhoto']").prettyPhoto({social_tools: false,
 			allow_resize: true, 
 			allow_expand: false, 
