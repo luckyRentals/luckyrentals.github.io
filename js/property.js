@@ -35,9 +35,8 @@ $(function() {
 
         lat = property.geocode().lat;
         lng = property.geocode().lng;
-
+        google.maps.event.addDomListener(window, 'load', initializeMap);
     });
-    google.maps.event.addDomListener(window, 'load', initializeMap);
 
 });
 
