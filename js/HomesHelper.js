@@ -4,46 +4,72 @@ var HomesHelper = function() {
     
     var that = this;
 
-	this.retreiveFeaturedHome = function() {
-		var homes = this.retreiveHomes();
-		var featuredHome = {};
-		$.each(homes, function(index, home) {
-			if (home.isFeatured()) {
-				featuredHome = home;
-			}
-		});
-		return featuredHome;
+	this.retrieveFeaturedHome = function(onSuccess) {
+        if (typeof(onSuccess) === "function") {
+            this.retrieveHomes(function(homes) {
+                var featuredHome = {};
+                $.each(homes, function(index, home) {
+                    if (home.isFeatured()) {
+                        featuredHome = home;
+                    }
+                });
+                onSuccess(featuredHome);
+            });
+        }
 	};
 
-	this.retreiveHomes = function() {
-		var retArray = [];
-		var homes = new PropertiesDataStore();
-		$.each(homes.listings(), function(index, homeJson) {
-			retArray.push(new Home(homeJson));
-		});
-		return retArray;
-
-		// FIXME: This should be the proper way...
-		// $.getJSON( "data/homes.json", function( data ) {
-		//   return data;
-		// });
-		// return [];
+	this.retrieveHomes = function(onSuccess) {
+        if (typeof(onSuccess) === "function") {
+            $.ajax({
+                type: "GET",
+                url: "data/homes.json",
+                dataType: "json",
+                beforeSend: function () {
+                    // Need to add a working spinner
+                }, success: function (data) {
+                    var retArray = [];
+                    $.each(data, function (index, homeJson) {
+                        retArray.push(new Home(homeJson));
+                    });
+                    onSuccess(retArray);
+                }, complete: function () {
+                    // Need to remove a working spinner
+                }, error: function (xhr, status, error) {
+                    console.log("Error: " + error);
+                }
+            });
+        }
 	};
 
-	this.retreivePropertyByKey = function(propertyKey) {
+	this.retrievePropertyByKey = function (propertyKey, onSuccess) {
 		if (propertyKey === undefined) {
 			return [];
 		}
-		var homes = new PropertiesDataStore();
-		var retHome = {}; 
-		$.each(homes.listings(), function(index, property) {
-			var home = new Home(property);
-			if (home.key() == propertyKey) {
-				retHome = home;
-				return false;
-			}
-		});
-		return retHome; // FIXME: Should return a canned image...
+        if (typeof (onSuccess) === "function") {
+            $.ajax({
+                type: "GET",
+                url: "data/homes.json",
+                dataType: "json",
+                beforeSend: function () {
+                    // Need to add a working spinner
+                }, success: function (data) {
+                    var retHome = {};
+                    $.each(data, function (index, property) {
+                        var home = new Home(property);
+                        if (home.key() == propertyKey) {
+                            retHome = home;
+                            return false;
+                        }
+                    });
+                    // FIXME: Should return a canned image...
+                    onSuccess(retHome);
+                }, complete: function () {
+                    // Need to remove a working spinner
+                }, error: function (xhr, status, error) {
+                    console.log("Error: " + error);
+                }
+            });
+        }
 	}
 
 	this.retreivePropertyById = function(propertyId) {
