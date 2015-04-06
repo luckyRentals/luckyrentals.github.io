@@ -6,37 +6,38 @@ $(function() {
 	
 	var homesHelper = new HomesHelper();
 	var key = getParameterByName("pk");
-	var property = homesHelper.retreivePropertyByKey(key);
-	if(! property) {
-		//Fixme need to redirect to an 404 error screen
-	}
+	homesHelper.retrievePropertyByKey(key, function(property) {
+        if(! property) {
+            //Fixme need to redirect to an 404 error screen
+        }
 
-	if(!property.isFeatured()) {
-		$("#property_title span.label").hide();
-	}
-	$("#property_title").text(property.streetName());
-	$("#property_main_image").append($("<img/>",{"src": "img/properties/" + property.key() + "/" + property.mainImage()}));
-	if(property.isAvailable() && property.cozyListing().length > 0) {
-		$("#property_apply_btn").on("click", function() {
-			window.location.href=property.cozyListing();
-		});	
-	}
-	$("#property_rent").text("$" + property.monthlyCost());
-	$("#property_deposit").text("$" + property.deposit());
-	$("#property_pets_allowed").text(property.petsAreAllowed() ? "Yes" : "No");
-	$("#property_sq_foot").text(property.squareFootage());
-	$("#property_bedrooms").text(property.bedrooms());
-	$("#property_bathrooms").text(property.bathrooms());
-	$("#property_description").text(property.description());
-	setFullAddress("property_full_address", property);
-	generatePropertyPhotos(property);
-	// Have to make foundation rebind to the DOM
-	$(document).foundation('clearing', 'reflow');
+        if(!property.isFeatured()) {
+            $("#property_title span.label").hide();
+        }
+        $("#property_title").text(property.streetName());
+        $("#property_main_image").append($("<img/>",{"src": "img/properties/" + property.key() + "/" + property.mainImage()}));
+        if(property.isAvailable() && property.cozyListing().length > 0) {
+            $("#property_apply_btn").on("click", function() {
+                window.location.href=property.cozyListing();
+            });
+        }
+        $("#property_rent").text("$" + property.monthlyCost());
+        $("#property_deposit").text("$" + property.deposit());
+        $("#property_pets_allowed").text(property.petsAreAllowed() ? "Yes" : "No");
+        $("#property_sq_foot").text(property.squareFootage());
+        $("#property_bedrooms").text(property.bedrooms());
+        $("#property_bathrooms").text(property.bathrooms());
+        $("#property_description").text(property.description());
+        setFullAddress("property_full_address", property);
+        generatePropertyPhotos(property);
+        // Have to make foundation rebind to the DOM
+        $(document).foundation('clearing', 'reflow');
 
-	lat = property.geocode().lat;
-	lng = property.geocode().lng;
+        lat = property.geocode().lat;
+        lng = property.geocode().lng;
 
-	google.maps.event.addDomListener(window, 'load', initializeMap);
+    });
+    google.maps.event.addDomListener(window, 'load', initializeMap);
 
 });
 
